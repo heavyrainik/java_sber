@@ -1,16 +1,17 @@
 import java.util.Map;
 
 public class Holding implements Client {
-    final private String name;
-    final private Double inn;
-    final private ClientTypes clientType = ClientTypes.HOLDING;
-    final private Boolean isSanctioned;
+    private final String name;
+    private final Double inn;
+    private final ClientTypes clientType = ClientTypes.HOLDING;
+    private final boolean isSanctioned;
 
-    Holding(Map clientInfo) {
+    Holding(Map<?, ?> clientInfo) {
         name = (String) clientInfo.get("name");
         inn = (Double) clientInfo.get("inn");
-        isSanctioned = (Boolean) clientInfo.get("isSanctioned");
+        isSanctioned = (boolean) clientInfo.get("isSanctioned");
     }
+
     public String getName()  {
         return name;
     }
@@ -23,7 +24,7 @@ public class Holding implements Client {
         return clientType;
     }
 
-    public Boolean getIsSanctioned() {
+    public boolean IsSanctioned() {
         return isSanctioned;
     }
 }

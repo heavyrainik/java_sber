@@ -4,13 +4,14 @@ public class LegalEntity implements Client {
     final private String name;
     final private Double inn;
     final private ClientTypes clientType = ClientTypes.LEGAL_ENTITY;
-    final private Boolean isSanctioned;
+    final private boolean isSanctioned;
 
-    LegalEntity(Map clientInfo) {
+    LegalEntity(Map<?, ?> clientInfo) {
         name = (String) clientInfo.get("name");
         inn = (Double) clientInfo.get("inn");
-        isSanctioned = (Boolean) clientInfo.get("isSanctioned");
+        isSanctioned = (boolean) clientInfo.get("isSanctioned");
     }
+
     public String getName()  {
         return name;
     }
@@ -23,7 +24,7 @@ public class LegalEntity implements Client {
         return clientType;
     }
 
-    public Boolean getIsSanctioned() {
+    public boolean IsSanctioned() {
         return isSanctioned;
     }
 }
