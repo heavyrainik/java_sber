@@ -1,0 +1,9 @@
+---
+- hosts: debian
+  become: yes
+  tasks:
+
+    - name: copy conf file
+      copy:
+        src: ../target/garage-1.0-SANPSHOT.jar
+        dest: garage.jar
